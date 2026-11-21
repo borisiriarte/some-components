@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  background-color: rgb(29, 27, 27);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-size-adjust: 80%;
+}
+
+h1 {
+  color: aqua;
+  font-size: 5rem;
+  font-size: clamp(2rem, 5vw, 5rem);
+}
+
+
+/* ancho de la pantalla = (valor(min o max)px * 100)/ valor central o preferido */
+/* 1rem = 16px => Cuando 5vw sea igual o menor a 2rem el tamaño de la fuente deja de decrecer*/
+/* 1rem = 16px => Cuando 5vw sea igual o mayor a 4rem el tamaño de la fuente deja de crecer*/
+
+h2 {
+  font-size: 4rem;
+  font-size: clamp(1.5rem, 3.75vw, 4rem);
+}
+
+h3 {
+  font-size: 3rem;
+  font-size: clamp(1rem, 2.5vw, 3rem);
+}
+
+p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}

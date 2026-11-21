@@ -1,0 +1,191 @@
+html {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: "Reospec";
+  src: url("fonts/Reospec.otf");
+  font-style: normal;
+}
+
+body {
+  height: 100dvh;
+  width: 100vw;
+  background: linear-gradient(217deg, rgb(12, 31, 48) 0%, rgba(12, 31, 48, 0.5) 120%),
+    linear-gradient(127deg, rgb(12, 31, 48) 0%, rgb(12, 31, 48, 0.5) 120%),
+    linear-gradient(360deg, rgb(27, 133, 110) 0%, rgba(27, 108, 133) 90%);
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+}
+
+/* body::after {
+  animation: grain 8s steps(10) infinite;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/paper-pattern.png);
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.07;
+  position: fixed;
+  top: -110%;
+  width: 300%;
+} */
+
+#starField {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  perspective: 500px;
+  transform-origin: 50% -10%;
+  /* border-radius: 50%; */
+  transform: translate3d(0%, -20%, 0px) rotateX(-20deg) rotateZ(0deg);
+}
+
+.star {
+  z-index: 2;
+  /* background-color: white; */
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.star2 {
+  z-index: -5;
+  position: absolute;
+  /* filter: blur(10px); */
+  --mask: radial-gradient(20px at 10.5px 10.5px, #0000 60%, #000) -10.5px -10.5px;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+
+}
+
+.name {
+  /* position: relative; */
+  color: transparent;
+  -webkit-text-stroke: 0.5px white;
+  font-size: 200px;
+  font-family: "Reospec";
+}
+
+/* .star::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  border-radius: -10%;
+  height: 10px;
+  width: 10px;
+  filter: blur(15px);
+  background-color: rgba(78, 224, 224, 0.986);
+  --mask: radial-gradient(5px at 5px 5px, #0000 100%, #000) -5px -5px;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  left: -4px;
+  top: -4px;
+} */
+
+
+.rotateR2 {
+  -webkit-animation: spinZ 800s infinite linear reverse;
+  animation: spinZ 800s infinite linear reverse;
+}
+
+.rotateL2 {
+  -webkit-animation: spinZ 400s infinite linear;
+  animation: spinZ 400s infinite linear;
+}
+
+@keyframes spinZ {
+  from {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+}
+
+#cloud-circle {
+  opacity: 0.1;
+  position: fixed;
+  width: 770px;
+  height: 270px;
+  border-radius: 50%;
+  filter: url(#filter);
+  box-shadow: 400px 400px 60px 0px #ffffffb7;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  animation: wind 1000s linear infinite;
+}
+
+.main {
+  color: rgba(245, 136, 121, 0.6);
+}
+
+
+/* @keyframes wind {
+  0% {
+    translate: -1px 0;
+
+  }
+
+  100% {
+    translate: 2000px 2000px;
+
+  }
+
+} */
+
+@keyframes grain {
+
+  0%,
+  100% {
+    transform: translate(0, 0)
+  }
+
+  10% {
+    transform: translate(-5%, -10%)
+  }
+
+  20% {
+    transform: translate(-15%, 5%)
+  }
+
+  30% {
+    transform: translate(7%, -25%)
+  }
+
+  40% {
+    transform: translate(-5%, 25%)
+  }
+
+  50% {
+    transform: translate(-15%, 10%)
+  }
+
+  60% {
+    transform: translate(15%, 0%)
+  }
+
+  70% {
+    transform: translate(0%, 15%)
+  }
+
+  80% {
+    transform: translate(3%, 35%)
+  }
+
+  90% {
+    transform: translate(-10%, 10%)
+  }
+}

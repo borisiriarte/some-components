@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #090909;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.mouse {
+  position: relative;
+  width: 30px;
+  height: 60px;
+  border-radius: 20px;
+  display: inline-flex;
+  background-color: #090909;
+  animation: hueChange 1.25s ease-in infinite;
+}
+
+.mouse::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 20px;
+  width: 112%;
+  height: 106%;
+  top: -3.1%;
+  left: -6%;
+  background-image: linear-gradient(
+    var(--rotate),
+    #86dff8,
+    #5ddcff,
+    #3c67e3 80%,
+    #762ee9
+  );
+  animation: spin 2.5s linear infinite;
+}
+
+.mouse::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 20px;
+  width: 112%;
+  height: 106%;
+  top: -3.1%;
+  left: -6%;
+  filter: blur(1px);
+  background-image: linear-gradient(
+    var(--rotate),
+    #86dff8,
+    #5ddcff,
+    #3c67e3 80%,
+    #762ee9
+  );
+  animation: spin 2.5s linear infinite;
+}
+
+.mouse-wheel {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: auto;
+  animation: moveWheel 1.25s ease-in infinite;
+}
+
+@keyframes moveWheel {
+  0% {
+    background-color: #5ddcff;
+    opacity: 0;
+    translate: 0 17px;
+  }
+
+  100% {
+    background-color: #86dff8;
+    opacity: 0.6;
+    translate: 0 -17px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+
+  100% {
+    --rotate: 360deg;
+  }
+}

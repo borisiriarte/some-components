@@ -1,0 +1,41 @@
+:root {
+  --background: linear-gradient(135deg, rgb(3, 25, 41) 0%, rgba(25, 56, 94, 0.3) 90%),
+    linear-gradient(-135deg, rgb(3, 25, 41) 0%, rgba(25, 56, 94, 0.3) 90%),
+    linear-gradient(360deg, rgb(247, 109, 67) 0%, rgba(31, 74, 105, 0.8) 50%);
+}
+
+html {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  background: var(--background);
+  box-sizing: inherit;
+  background-repeat: no-repeat;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  margin: 0;
+  padding: 0;
+  /* animation: rotate 1000s infinite linear; */
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

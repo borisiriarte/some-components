@@ -1,0 +1,8 @@
+.container {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  --mask: radial-gradient(50px at 50px 50px, #0000 100%, #000) -50px -50px;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}

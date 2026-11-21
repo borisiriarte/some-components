@@ -1,0 +1,14 @@
+canvas {
+  display: inline-block;
+}
+
+body {
+  background: rgb(8, 4, 11);
+  text-align: center;
+}
+
+
+canvas#dst:hover {
+
+  cursor: none;
+}
